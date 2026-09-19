@@ -5,8 +5,8 @@ using namespace std;
 
 // Implemented the complete version of the function this time.
 bool isSorted(const int* arr, const int size) {
-    // An array with 1 element is basically sorted.
-    if (size == 1) {
+    // An array with 1 or 0 elements is basically sorted.
+    if (size <= 1) {
         return true;
     }
 
@@ -69,6 +69,14 @@ void testTwoElementsUnsorted() {
     assert(isSorted(arr, 2) == false);
 }
 
+// 9. New Test case that AI identified
+void testZeroElements() {
+    int arr[] = {};
+    assert(isSorted(arr, 0) == true);
+}
+
+
+
 int main() {
     testSortedArray();
     testUnsortedArray();
@@ -78,6 +86,7 @@ int main() {
     testNegativeValues();
     testIdenticalElements();
     testTwoElementsUnsorted();
+    testZeroElements();
 
     cout << "All initial tests executed." << endl;
     
