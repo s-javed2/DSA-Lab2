@@ -3,8 +3,21 @@
 
 using namespace std;
 
-// Implemented so that the file may compile
+// Implemented the complete version of the function this time.
 bool isSorted(const int* arr, const int size) {
+    // An array with 1 element is basically sorted.
+    if (size == 1) {
+        return true;
+    }
+
+    // A loop is used to iterate through the array and compare the neighboring elements using a conditional.
+    for (int i = 0; i < size - 1; i++) {
+        // If the current element is strictly greater than the next, it is unsorted
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+    }
+
     return true;
 }
 
